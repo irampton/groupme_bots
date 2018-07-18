@@ -1,0 +1,19 @@
+[
+  {"acro" : "idk", "txt": "IDK: I Don't Know, I Don't Care, I'm Donkey Kong"},
+  {"acro" : "omw", "txt": "OMW: On My Way"},
+  {"acro" : "aka", "txt": "AKA: Also Known As"},
+  {"acro" : "afk", "txt": "AFK: Away From Keyboard"},
+  {"acro" : "imo", "txt": "IMO: In My Opinion"},
+  {"acro" : "imho", "txt": "IMHO: In My Humble/Honest Opinion"},
+  {"acro" : "iow", "txt": "IOW: In Other Words"},
+  {"acro" : "ftw", "txt": "FTW: For The Win"},
+  {"acro" : "mmw", "txt": "MMW: Mark My Words"},
+  {"acro" : "tbd", "txt": "TBD: To Be Determined"},
+  {"acro" : "tba", "txt": "TBA: To Be Announced"},
+  {"acro" : "tbc", "txt": "TBC: To Be Confirmed"},
+  {"acro" : "thx", "txt": "THX: Thanks"},
+  {"acro" : "tmi", "txt": "TMI: To Much Information"},
+  {"acro" : "ttyl", "txt": "TTYL: Talk To You Later"},
+  {"acro" : "brb", "txt": "BRB: Be Right Back"},
+  {"acro" : "cya", "txt": "CYA: See You"}
+]

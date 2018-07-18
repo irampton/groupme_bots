@@ -1,0 +1,70 @@
+/**
+ * Created by IRamp on 8/5/2016.
+ */
+const https = require('https');
+const GroupMe = require('groupme');
+const API = GroupMe.Stateless;
+
+let text = "";
+const BOT_NAME = "Anti-Spam Machine";
+const GROUP_ID = "40307697";
+let bot_id = "b8a0921a0e9c465f7ba18d6506";
+
+const acro = require("./ib/acro.json");
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
+
+let msg_counter = {"id": 0, "count" : 0};
+
+app.post('/', function (req,res) {
+    let msg = req.body;
+    console.log("Received message: " + msg.name + ": " + msg.text);
+    if(true) {
+        if (bot_id && msg.name !== BOT_NAME && msg.group_id === GROUP_ID) {
+            text = "";
+            let pic = {};
+            let go = false;
+            const txt = msg.text.toLowerCase();
+            //acronyms
+            /*for(let i = 0;i < acro.length; i++){
+                if(txt.includes(acro[i].acro)){
+                    sendMSG(acro[i].txt);
+                }
+            }*/
+            if(msg_counter.id === msg.user_id){
+                msg_counter.count++;
+            }else{
+                msg_counter.id = msg.user_id;
+                msg_counter.count = 1;
+            }
+            if(msg_counter.count >= 5){
+                sendMSG(`@${msg.name} stop spamming!`);
+                msg_counter.count = 0;
+            }
+        }
+    }
+    res.status(200);
+    res.send();
+});
+function sendMSG(msg){
+    API.Bots.post(
+        ACCESS_TOKEN, // Identify the access token
+        bot_id, // Identify the bot that is sending the message
+        msg, // Construct the message
+        {}, // No pictures related to this post
+        function (err, res) {
+            if (err) {
+                console.log("[API.Bots.post] Reply Message Error!");
+            } else {
+                console.log("[API.Bots.post] Reply Message Sent!");
+            }
+        });
+}
+app.listen(32022);
+console.log('running on port 32022');
