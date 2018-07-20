@@ -160,7 +160,15 @@ function sendMSG(msg) {
 
 function pushCount(count) {
 }
+function compareCounter(a,b) {
+    if (a.count < b.count)
+        return -1;
+    if (a.count > b.count)
+        return 1;
+    return 0;
+}
 
+objs.sort(compare);
 //get counter
 let msgCounter = [];
 app.listen(32021);
