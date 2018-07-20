@@ -23,23 +23,23 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 let msg_counter = {"id": 0, "count" : 0};
 
 //message counter
-let flag = false;
-for (let i = 0; i < msgCounter.length; i++) {
-    if (msgCounter[i].id === msg.user_id) {
-        flag = true;
-        msgCounter[i].name = msg.name;
-        msgCounter[i].count++;
-        pushCount(msgCounter);
-    }
-}
-if (!flag) {
-    msgCounter.push({"name": msg.name, "id": msg.user_id, "count": 1});
-    pushCount(msgCounter);
-}
 
 app.post('/', function (req,res) {
     let msg = req.body;
     console.log("Received message: " + msg.name + ": " + msg.text);
+    let flag = false;
+    for (let i = 0; i < msgCounter.length; i++) {
+        if (msgCounter[i].id === msg.user_id) {
+            flag = true;
+            msgCounter[i].name = msg.name;
+            msgCounter[i].count++;
+            pushCount(msgCounter);
+        }
+    }
+    if (!flag) {
+        msgCounter.push({"name": msg.name, "id": msg.user_id, "count": 1});
+        pushCount(msgCounter);
+    }
     if(true) {
         if (bot_id && msg.name !== BOT_NAME && msg.group_id === GROUP_ID) {
             text = "";
