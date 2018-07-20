@@ -93,7 +93,10 @@ app.post('/', function (req, res) {
                     break;
                 case ".leaderboard":
                     let lead = msgCounter.sort(compareCounter);
-                    text = json.stringify(msgCounter);
+                    text = "";
+                    for (let i=0;i<lead.length;i++){
+                    text+=lead.name+':\t'+ lead.count+"/n";
+                    }
                     go = true;
                     break;
 
