@@ -93,10 +93,10 @@ app.post('/', function (req, res) {
                     break;
                 case ".leaderboard":
                     let lead = msgCounter.sort(compareCounter);
+                    console.log(lead);
                     text = "";
-                    for (let i=0;i<lead.length;i++){
-                    text+=lead.name+':\t'+ lead.count+"/n";
-                    }
+                    for (let i = 0; i < lead.length; i++) {
+                        text += lead[i].name + ':\t\t\t' + lead[i].count + "\n";}
                     go = true;
                     break;
 
@@ -164,15 +164,13 @@ function sendMSG(msg) {
 
 function pushCount(count) {
 }
-function compareCounter(a,b) {
+function compareCounter(a, b) {
     if (a.count < b.count)
         return -1;
     if (a.count > b.count)
         return 1;
     return 0;
 }
-
-objs.sort(compare);
 //get counter
 let msgCounter = [];
 app.listen(32021);

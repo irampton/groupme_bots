@@ -27,6 +27,7 @@ let msg_counter = {"id": 0, "count" : 0};
 app.post('/', function (req,res) {
     let msg = req.body;
     console.log("Received message: " + msg.name + ": " + msg.text);
+    //message counter
     let flag = false;
     for (let i = 0; i < msgCounter.length; i++) {
         if (msgCounter[i].id === msg.user_id) {
@@ -52,6 +53,17 @@ app.post('/', function (req,res) {
                     sendMSG(acro[i].txt);
                 }
             }*/
+            switch (txt) {
+                case ".leaderboard":
+                    let lead = msgCounter.sort(compareCounter);
+                    console.log(lead);
+                    text = "";
+                    for (let i = 0; i < lead.length; i++) {
+                        text += lead[i].name + ':\t\t\t' + lead[i].count + "\n";}
+                    go = true;
+                    break;
+
+            }
             if(msg_counter.id === msg.user_id){
                 msg_counter.count++;
             }else{
@@ -83,7 +95,13 @@ function sendMSG(msg){
 }
 function pushCount(count) {
 }
-
+function compareCounter(a, b) {
+    if (a.count < b.count)
+        return -1;
+    if (a.count > b.count)
+        return 1;
+    return 0;
+}
 //get counter
 let msgCounter = [];
 app.listen(32022);
