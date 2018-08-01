@@ -51,6 +51,10 @@ app.post('/', function (req, res) {
             }
             //commands
             switch (txt) {
+                case "!heck":
+                    text = "!heck";
+                    go = true;
+                    break;
                 case "stap":
                     text = "Stop that right now Mister!";
                     go = true;
