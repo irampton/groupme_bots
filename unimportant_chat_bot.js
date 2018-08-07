@@ -52,7 +52,7 @@ app.post('/', function (req, res) {
             //commands
             switch (txt) {
                 case "!heck":
-                    text = "!heck";
+                    text = "!heck | m Euphoric";
                     go = true;
                     break;
                 case "stap":
