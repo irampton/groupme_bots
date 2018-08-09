@@ -55,6 +55,10 @@ app.post('/', function (req, res) {
                     text = "!heck | m Euphoric";
                     go = true;
                     break;
+                case "I hate you":
+                    text = "https://soundcloud.com/leilabean-1/undertale-disbelief-papyrus-genocide-route-theme-spoilers";
+                    go = true;
+                    break;
                 case "stap":
                     text = "Stop that right now Mister!";
                     go = true;
