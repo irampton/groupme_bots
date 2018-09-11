@@ -105,46 +105,7 @@ app.post('/', function (req, res) {
                     break;
 
             }
-            if (txt.indexOf("i'm") >= 0) {
-                let space = 0;
-                let spaceIndex;
-                let t = "Larry";
-                for (let i = txt.indexOf("i'm"); i < txt.length; i++) {
-                    if (txt[i] === " ") {
-                        space++;
-                        if (space === 2) {
-                            t = txt.slice(spaceIndex, i);
-                        } else {
-                            spaceIndex = i + 1;
-                        }
-                    } else if (i === txt.length - 1) {
-                        t = txt.slice(spaceIndex, i + 1);
-                    }
-                }
-                text = "Hi " + t + " I am a bot!";
-                go = true;
-            } else if (txt.indexOf("i am") >= 0) {
-                let space = 0;
-                let spaceIndex;
-                let t = "Larry";
-                for (let i = txt.indexOf("i am"); i < txt.length; i++) {
-                    if (txt[i] === " ") {
-                        space++;
-                        if (space === 3) {
-                            t = txt.slice(spaceIndex, i);
-                        } else {
-                            spaceIndex = i + 1;
-                        }
-                    } else if (i === txt.length - 1) {
-                        t = txt.slice(spaceIndex, i + 1);
-                    }
-                }
-                text = "Hi " + t + " I am a bot!";
-                go = true;
-            }
-            if (go) {
-                sendMSG(text);
-            }
+            
         }
     }
     res.status(200);
