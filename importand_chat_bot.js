@@ -64,16 +64,7 @@ app.post('/', function (req,res) {
                     break;
 
             }
-            if(msg_counter.id === msg.user_id){
-                msg_counter.count++;
-            }else{
-                msg_counter.id = msg.user_id;
-                msg_counter.count = 1;
-            }
-            if(msg_counter.count >= 5){
-                sendMSG(`@${msg.name} stop spamming!`);
-                msg_counter.count = 0;
-            }
+
         }
     }
     res.status(200);
