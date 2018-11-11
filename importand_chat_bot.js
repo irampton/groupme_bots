@@ -6,9 +6,9 @@ const GroupMe = require('groupme');
 const API = GroupMe.Stateless;
 
 let text = "";
-const BOT_NAME = "Anti-Spam Machine";
-const GROUP_ID = "40307697";
-let bot_id = "b8a0921a0e9c465f7ba18d6506";
+const BOT_NAME = "";
+const GROUP_ID = "";
+let bot_id = "";
 
 const acro = require("./ib/acro.json");
 

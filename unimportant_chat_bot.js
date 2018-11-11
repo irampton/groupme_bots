@@ -6,9 +6,9 @@ const GroupMe = require('groupme');
 const API = GroupMe.Stateless;
 
 let text = "";
-const BOT_NAME = "I am a Bot";
-const GROUP_ID = "40307596";
-let bot_id = "90a5f27a8ff9b2ded70ea8ecf5";
+const BOT_NAME = "";
+const GROUP_ID = "";
+let bot_id = "";
 
 const eight = ["yes", "no", "maybe", "I would not count on it", "count on it", "heck yeah", "heck no"];
 const acro = require("./uib/acro.json");
@@ -100,7 +100,8 @@ app.post('/', function (req, res) {
                     console.log(lead);
                     text = "";
                     for (let i = 0; i < lead.length; i++) {
-                        text += lead[i].name + ':\t\t\t' + lead[i].count + "\n";}
+                        text += lead[i].name + ':\t\t\t' + lead[i].count + "\n";
+                    }
                     go = true;
                     break;
 
@@ -168,6 +169,7 @@ function sendMSG(msg) {
 
 function pushCount(count) {
 }
+
 function compareCounter(a, b) {
     if (a.count < b.count)
         return -1;
@@ -175,6 +177,7 @@ function compareCounter(a, b) {
         return 1;
     return 0;
 }
+
 //get counter
 let msgCounter = [];
 app.listen(32021);
