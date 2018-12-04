@@ -10,7 +10,7 @@ const BOT_NAME = "";
 const GROUP_ID = "";
 let bot_id = "";
 
-const eight = ["yes", "no", "maybe", "I would not count on it", "count on it", "heck yeah", "heck no"];
+const eight = ["yes", "no", "maybe", "I would not count on it", "count on it", "h*ck yeah", "h*ck no"];
 const acro = require("./uib/acro.json");
 
 const express = require('express');
@@ -80,6 +80,9 @@ app.post('/', function (req, res) {
                     go = true;
                     break;
                 case "you're welcome":
+                case "thank":
+                case "thanks":
+                case "thx":
                     text = "https://www.youtube.com/watch?v=79DijItQXMM";
                     go = true;
                     break;
@@ -106,6 +109,10 @@ app.post('/', function (req, res) {
                     break;
 
             }
+            if(txt.contains("when you"){
+               text = "lol me too 😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂"
+               go = true;
+             }
             if (txt.indexOf("i'm") >= 0) {
                 let space = 0;
                 let spaceIndex;
