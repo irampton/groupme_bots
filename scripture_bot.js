@@ -8,7 +8,7 @@ const books = [
     {"text" : ["words of mormon"], "name" : "Words of Mormon","path" : "/bofm/w-of-m"},
     {"text" : ["mosiah"], "name" : "Mosiah","path" : "/bofm/mosiah"},
     {"text" : ["alma"], "name" : "Alma","path" : "/bofm/alma"},
-    {"text" : ["heleman"], "name" : "Heleman","path" : "/bofm/hel"},
+    {"text" : ["helaman"], "name" : "Helaman","path" : "/bofm/hel"},
     {"text" : ["3 nephi", "3rd nephi"], "name" : "3 Nephi","path" : "/bofm/3-ne"},
     {"text" : ["4 nephi", "4th nephi"], "name" : "3 Nephi","path" : "/bofm/4-ne"},
     {"text" : ["mormon"], "name" : "Mormon","path" : "/bofm/morm"},
