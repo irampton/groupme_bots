@@ -103,9 +103,16 @@ app.post('/', function (req, res) {
                         text += lead[i].name + ':\t\t\t' + lead[i].count + "\n";
                     }
                     go = true;
-                    break;
-
+                    break;             
             }
+            
+            if (txt.indexOf("?") == 0) {
+                let rollOne = (Math.floor(Math.random() * 20)).ToString;
+                let rollTwo = (Math.floor(Math.random() * 20)).ToString;
+                text = "Your roll: " + rollOne + "; World's Roll: " + rollTwo;
+                go = true;
+            } 
+            
             if (txt.indexOf("i'm") >= 0) {
                 let space = 0;
                 let spaceIndex;
